@@ -1,16 +1,18 @@
-import { useState } from 'react';
 import { Header } from './components/Header';
 import { GlobalStyle } from './styles/global';
+import { Route, Routes } from 'react-router-dom';
+import { Login } from './pages/Login';
 
-function App() {
+export function App() {
 
   return (
     <>
-      <Header />
-      <h1>Hello World</h1>
+      <Routes>
+      {/* <Header /> */}
+        <Route path="/login" element={<Login/>} />
+      {/* <h1>Hello World</h1> */}
+      </Routes>
       <GlobalStyle />
     </>
   )
 }
-
-export default App
