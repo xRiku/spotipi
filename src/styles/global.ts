@@ -25,7 +25,7 @@ export const GlobalStyle = createGlobalStyle`
     body, input, textarea, button {
         font-family: 'Montserrat', sans-serif;
         font-weight: 400;
-        color: #fff
+        /* color: #fff; */
     }
 
     button {
