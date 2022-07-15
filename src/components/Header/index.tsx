@@ -1,7 +1,13 @@
-export function Header() {
+export function Header(props: any) {
     return (
         <header>
-            Header
+            <span>SpotiPI</span>
+            <div>
+                <button>Playlists</button>
+                <button>Músicas</button>
+                <button>Artistas</button>
+            </div>
+            <div></div>
         </header>
     )
 }

@@ -22,12 +22,21 @@ export function Welcome() {
         setToken(token)
 
         if (token) {
+
+            axios.get('https://api.spotify.com/v1/me/', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
+            }).then(res => {
+                console.log(res.data);
+            })
+
             axios.get('https://api.spotify.com/v1/me/playlists', {
             headers: {
                 Authorization: `Bearer ${token}`
             },
             }).then(res => {
-                // console.log(res)
+                console.log(res)
                 setPlaylits(res.data.items);
             })
         }
@@ -35,7 +44,6 @@ export function Welcome() {
     
     return (
         <>
-            <Header/>
             <h1>Welcome</h1>
             <div>
                 <ul>
