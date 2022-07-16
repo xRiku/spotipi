@@ -1,13 +1,30 @@
-export function Header(props: any) {
+import { Link } from 'react-router-dom'
+
+type HeaderProps = {
+    userData: userInfo,
+}
+
+type userInfo = {
+    images : Array<Image>,
+    display_name : string, 
+}
+
+type Image = {
+    url : string,
+}
+
+export function Header( { userData } : HeaderProps) {
+    console.log(userData);
+
     return (
         <header>
             <span>SpotiPI</span>
             <div>
-                <button>Playlists</button>
-                <button>Músicas</button>
-                <button>Artistas</button>
+                <Link to=''>Playlists</Link>
+                <Link to='/songs'>Músicas</Link>
+                <Link to='/artists'>Artistas</Link>
             </div>
-            <div></div>
+            <img src={userData.images[0].url}/>
         </header>
     )
 }
