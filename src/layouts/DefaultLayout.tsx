@@ -38,7 +38,7 @@ export function DefaultLayout(props: any) {
   return (
     <>
       <Header userData={userInfo}/>
-      <Outlet context={token}/>
+      <Outlet context={[token, setToken]}/>
     </>
   );
 }

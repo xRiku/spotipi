@@ -17,19 +17,23 @@ type Image = {
 }
 
 export function Artists() {
-    const token = useOutletContext()
+    const [token, setToken] = useOutletContext<String>()
 
     const [artists, setArtists] = useState<Artist[]>([]);
+    
     useEffect(() => {
+        console.log(`TOKEN: ${token}`)
         axios.get('https://api.spotify.com/v1/me/top/artists', {
         headers: {
             Authorization: `Bearer ${token}`
         },
         }).then(res => {
-            console.log(res.data);
+            // console.log(res.data);
             setArtists(res.data.items);
+        }).catch(e => {
+            console.log(`error: ${e}`);
         })
-    }, [])
+    }, [token])
 
     return (
         <>
@@ -39,15 +43,14 @@ export function Artists() {
                     <li key={artists.href}>
                         {artists.map(artist => {
                             return <div key={artist.id}>
-                                <img src={artist.images[2].url} alt={artist.name} />]} 
+                                <img src={artist.images[2].url} alt={artist.name} />
                                 <div>
                                     <h2>{artist.name}</h2>
                                     <p>Gênero principal: {artist.genres[0]}</p>
                                     <p>Poularidade: {artist.popularity}</p>
                                 </div>
                             </div>
-                            }
-                        )}
+                        })}
                     </li>
                 </ul>
             </div>
