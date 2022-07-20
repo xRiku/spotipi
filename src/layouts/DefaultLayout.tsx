@@ -27,9 +27,9 @@ export function DefaultLayout(props: any) {
         headers: {
             Authorization: `Bearer ${token}`
         },
-        }).then(res => {
+        }).then(async res => {
             // console.log(res.data);
-            setUserInfo(res.data);
+            await setUserInfo(res.data);
         })
     }
   }, [])

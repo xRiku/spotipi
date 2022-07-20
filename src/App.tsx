@@ -5,6 +5,7 @@ import { Login } from './pages/Login';
 import { Songs } from './pages/Songs';
 import { Welcome } from './pages/Welcome';
 import { DefaultLayout } from './layouts/DefaultLayout';
+import { Artists } from './pages/Artists';
 
 export function App() {
 
@@ -15,6 +16,7 @@ export function App() {
         <Route path="/" element={<DefaultLayout />}>
           <Route path="/welcome" element={<Welcome/>} />
           <Route path="/songs" element={<Songs/>} />
+          <Route path="/artists" element={<Artists/>} />
         </Route>
       </Routes>
       <GlobalStyle />

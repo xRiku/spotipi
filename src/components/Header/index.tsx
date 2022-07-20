@@ -24,7 +24,7 @@ export function Header( { userData } : HeaderProps) {
                 <Link to='/songs'>Músicas</Link>
                 <Link to='/artists'>Artistas</Link>
             </div>
-            <img src={userData.images[0].url}/>
+            { Object.keys(userData).length !== 0 ? <img src={userData.images[0].url}/> : <></> }
         </header>
     )
 }
