@@ -20,16 +20,16 @@ export function DefaultLayout(props: any) {
     }
 
     setToken(token)
-
+    console.log(`token: ${token}`)
     if (token) {
 
         axios.get('https://api.spotify.com/v1/me/', {
         headers: {
             Authorization: `Bearer ${token}`
         },
-        }).then(async res => {
+        }).then(res => {
             // console.log(res.data);
-            await setUserInfo(res.data);
+            setUserInfo(res.data);
         })
     }
   }, [])
@@ -38,7 +38,7 @@ export function DefaultLayout(props: any) {
   return (
     <>
       <Header userData={userInfo}/>
-      <Outlet />
+      <Outlet context={token}/>
     </>
   );
 }

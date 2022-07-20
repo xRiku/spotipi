@@ -14,7 +14,7 @@ type Image = {
 }
 
 export function Header( { userData } : HeaderProps) {
-    console.log(userData);
+    // console.log(userData);
 
     return (
         <header>
