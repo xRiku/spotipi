@@ -46,16 +46,14 @@ export function Welcome() {
             <h1>Welcome</h1>
             <div>
                 <ul>
-                    <li key={playlists.href}>
-                        {playlists.map(playlist => {
-                            return <div key={playlist.id}>
-                                <h2>{playlist.name}</h2>
-                                <p>{playlist.description}</p>
-                                <p>{playlist.tracks.total} tracks</p>
-                            </div>
-                        }
-                        )}
-                    </li>
+                    {playlists.map(playlist => {
+                        return <li key={playlist.id}>
+                            <h2>{playlist.name}</h2>
+                            <p>{playlist.description}</p>
+                            <p>{playlist.tracks.total} tracks</p>
+                        </li>
+                    }
+                    )}
                 </ul>
             </div>
         </>
