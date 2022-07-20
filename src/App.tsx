@@ -3,7 +3,7 @@ import { GlobalStyle } from './styles/global';
 import { Route, Routes } from 'react-router-dom';
 import { Login } from './pages/Login';
 import { Songs } from './pages/Songs';
-import { Welcome } from './pages/Welcome';
+import { Playlists } from './pages/Playlists';
 import { DefaultLayout } from './layouts/DefaultLayout';
 import { Artists } from './pages/Artists';
 
@@ -14,7 +14,7 @@ export function App() {
       <Routes>
         <Route path="/login" element={<Login/>} />
         <Route path="/" element={<DefaultLayout />}>
-          <Route path="/welcome" element={<Welcome/>} />
+          <Route path="/playlists" element={<Playlists/>} />
           <Route path="/songs" element={<Songs/>} />
           <Route path="/artists" element={<Artists/>} />
         </Route>

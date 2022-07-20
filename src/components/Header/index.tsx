@@ -20,7 +20,7 @@ export function Header( { userData } : HeaderProps) {
         <header>
             <span>SpotiPI</span>
             <div>
-                <Link to='/welcome'>Playlists</Link>
+                <Link to='/playlists'>Playlists</Link>
                 <Link to='/songs'>Músicas</Link>
                 <Link to='/artists'>Artistas</Link>
             </div>
