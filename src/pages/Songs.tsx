@@ -33,9 +33,10 @@ export function Songs() {
                             <img src={song.album.images[2].url} alt={song.name} />
                             <div>
                                 <h2>{song.name}</h2>
-                                <p>Nome do album: {song.album.name}</p>
-                                <p>Tipo: {song.album.album_type}</p>
-                                <p>Poularidade: {song.popularity}</p>
+                                <span>{song.artists[0].name}</span>
+                                <span>Nome do album: {song.album.name}</span>
+                                <span>Poularidade: {song.popularity}</span>
+                                {song.explicit ? <span>Explicita</span> : <></>}
                             </div>
                         </li>
                     })}

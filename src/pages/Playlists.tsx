@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useOutletContext } from 'react-router-dom';
+import { Playlist } from '../@types/Playlist';
 
 export function Playlists() {
     
     const [token, setToken] = useOutletContext<String>()
-    const [playlists, setPlaylits] = useState<any[]>([]);
+    const [playlists, setPlaylits] = useState<Playlist[]>([]);
 
     useEffect(() => {
         console.log(`TOKEN: ${token}`)
@@ -14,7 +15,7 @@ export function Playlists() {
             Authorization: `Bearer ${token}`
         },
         }).then(res => {
-            // console.log(res.data);
+            console.log(res.data);
             setPlaylits(res.data.items);
         }).catch(e => {
             console.log(`error: ${e}`);
@@ -28,9 +29,12 @@ export function Playlists() {
                 <ul>
                     {playlists.map(playlist => {
                         return <li key={playlist.id}>
-                            <h2>{playlist.name}</h2>
-                            <p>{playlist.description}</p>
-                            <p>{playlist.tracks.total} tracks</p>
+                            <img src={playlist.images[0].url} alt={playlist.name} />
+                            <div>
+                                <h2>{playlist.name}</h2>
+                                <span>{playlist.description}</span>
+                                <span>Número de músicas: {playlist.tracks.total} </span>
+                            </div>
                         </li>
                     }
                     )}
