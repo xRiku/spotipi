@@ -1,20 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useOutletContext } from 'react-router-dom'
 import axios from 'axios';
-
-type Artist = {
-    href: string,
-    id: string,
-    name: string,
-    genres: Array<string>,
-    images: Array<Image>,
-    popularity: number,
-    uri: string,
-}
-
-type Image = {
-    url: string,
-}
+import { Artist } from '../@types/Artist';
 
 export function Artists() {
     const [token, setToken] = useOutletContext<String>()
