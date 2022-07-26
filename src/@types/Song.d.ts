@@ -1,3 +1,8 @@
+type SongType = {
+    type: string;
+    songs: Song[];
+}
+
 type Song = {
     name: string,
     artists: Array<Artist>,
