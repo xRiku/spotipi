@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, MouseEvent } from 'react';
 import axios from 'axios';
 import { useOutletContext } from 'react-router-dom';
 import { Song } from '../../@types/Song';
@@ -8,7 +8,8 @@ import { SongContainer, SongsContainer } from './styles';
 export function Songs() {
 
     const [token, setToken] = useOutletContext<String>()
-
+    
+    const [selectedItem, setSelectedItem] = useState("last-month");
     const [songs, setSongs] = useState<Song[]>([]);
     
     useEffect(() => {
@@ -24,14 +25,19 @@ export function Songs() {
             console.log(`error: ${e}`);
         })
     }, [token])
+
+
+    function handleSelectOption(e: MouseEvent<HTMLElement>) {
+        setSelectedItem(e.currentTarget.id);
+    }
     
     return (
         <SongsContainer>
             <h1>Mais tocadas</h1>
             <div>
-                <button>último mês</button>
-                <button>último 6 meses</button>
-                <button>todos os tempos</button>
+                <button id='last-month' className={selectedItem === "last-month" ? "selected" : "" } onClick={handleSelectOption}>último mês</button>
+                <button id='last-six-months' className={selectedItem === "last-six-months" ? "selected" : "" } onClick={handleSelectOption}>últimos 6 meses</button>
+                <button id='since-ever' className={selectedItem === "since-ever" ? "selected" : "" } onClick={handleSelectOption}>todos os tempos</button>
             </div>
             <ul>
                 {songs.map((song, index) => {

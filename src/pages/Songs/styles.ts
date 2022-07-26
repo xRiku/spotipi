@@ -20,10 +20,19 @@ export const SongsContainer = styled.div`
 
 
     div {
-        /* display: flex; */
-        /* justify-content: center; */
-        /* align-items: center; */
-        
+        display: flex; 
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+
+        button {
+            color: #fff;
+            font-weight: 200;
+            &.selected {
+                font-weight: 700;
+            }
+        }
+        margin-bottom: 1rem;
     }
 
     h1 {
@@ -38,8 +47,8 @@ export const SongsContainer = styled.div`
         color: #fff;
         margin-right: 1rem;
         font-weight: 400;
-        width: 1rem;
-        text-align: center;
+        width: 3rem;
+        text-align: right;
     }
 `;
 
