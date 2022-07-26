@@ -30,6 +30,12 @@ export const GlobalStyle = createGlobalStyle`
 
     button {
         cursor: pointer;
+        border: none;
+        background-color: transparent;
+    }
+
+    ul {
+        list-style: none;
     }
 
     [disabled] {
