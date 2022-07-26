@@ -35,7 +35,7 @@ export function Songs() {
                                 <h2>{song.name}</h2>
                                 <span>{song.artists[0].name}</span>
                                 <span>Nome do album: {song.album.name}</span>
-                                <span>Poularidade: {song.popularity}</span>
+                                <span>Popularidade: {song.popularity}</span>
                                 {song.explicit ? <span>Explicita</span> : <></>}
                             </div>
                         </li>

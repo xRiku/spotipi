@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import { HeaderContainer } from './styles'
+
 
 type HeaderProps = {
     userData: userInfo,
@@ -17,14 +19,14 @@ export function Header( { userData } : HeaderProps) {
     // console.log(userData);
 
     return (
-        <header>
+        <HeaderContainer>
             <span>SpotiPI</span>
             <div>
-                <Link to='/playlists'>Playlists</Link>
-                <Link to='/songs'>Músicas</Link>
-                <Link to='/artists'>Artistas</Link>
+                <NavLink to='/playlists'>Playlists</NavLink>
+                <NavLink to='/songs'>Músicas</NavLink>
+                <NavLink to='/artists'>Artistas</NavLink>
             </div>
             { Object.keys(userData).length !== 0 ? <img src={userData.images[0].url}/> : <></> }
-        </header>
+        </HeaderContainer>
     )
 }
