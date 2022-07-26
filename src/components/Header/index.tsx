@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import { HeaderContainer } from './styles'
-
+import { MouseEvent } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 type HeaderProps = {
     userData: userInfo,
@@ -17,7 +18,14 @@ type Image = {
 
 export function Header( { userData } : HeaderProps) {
     // console.log(userData);
+    const navigate = useNavigate();
 
+    function handleClick (e: MouseEvent<HTMLElement>) {
+        localStorage.removeItem('token');
+        // window.location.reload();
+        navigate("/login");
+    }
+    
     return (
         <HeaderContainer>
             <span>SpotiPI</span>
@@ -26,7 +34,7 @@ export function Header( { userData } : HeaderProps) {
                 <NavLink to='/songs'>Músicas</NavLink>
                 <NavLink to='/artists'>Artistas</NavLink>
             </div>
-            { Object.keys(userData).length !== 0 ? <img src={userData.images[0].url}/> : <></> }
+            { Object.keys(userData).length !== 0 ? <img onClick={handleClick} src={userData.images[0].url}/> : <></> }
         </HeaderContainer>
     )
 }

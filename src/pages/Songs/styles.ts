@@ -28,17 +28,18 @@ export const SongsContainer = styled.div`
         button {
             color: #fff;
             font-weight: 200;
+            font-size: 1.5rem;
             &.selected {
                 font-weight: 700;
             }
         }
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
     }
 
     h1 {
         font-size: 3.5rem;
         color: #fff;
-        margin-bottom: 1rem;
+        margin-bottom: 3rem;
 
     }
 
