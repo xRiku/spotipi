@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useOutletContext } from 'react-router-dom';
-import { Playlist } from '../@types/Playlist';
+import { Playlist } from '../../@types/Playlist';
+import { PlaylistContainer, PlaylistsContainer } from './styles';
 
 export function Playlists() {
     
@@ -23,23 +24,25 @@ export function Playlists() {
     }, [token])
     
     return (
-        <>
-            <h1>Welcome</h1>
+        <PlaylistsContainer>
+            <h1>Bem vindo</h1>
             <div>
                 <ul>
                     {playlists.map(playlist => {
-                        return <li key={playlist.id}>
+                        return <PlaylistContainer key={playlist.id}>
+                            <div>
                             <img src={playlist.images[0].url} alt={playlist.name} />
                             <div>
                                 <h2>{playlist.name}</h2>
-                                <span>{playlist.description}</span>
-                                <span>Número de músicas: {playlist.tracks.total} </span>
+                                {/* <span>{playlist.description}</span> */}
+                                <span>{playlist.tracks.total} músicas </span>
                             </div>
-                        </li>
+                            </div>
+                        </PlaylistContainer>
                     }
                     )}
                 </ul>
             </div>
-        </>
+        </PlaylistsContainer>
     )
 }

@@ -18,4 +18,4 @@ type Image = {
     url: string,
 }
 
-export { Artist, Image }
+export { Artist, Image, ArtistType }
