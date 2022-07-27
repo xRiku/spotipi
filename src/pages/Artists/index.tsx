@@ -3,6 +3,7 @@ import { useOutletContext } from 'react-router-dom'
 import axios from 'axios';
 import { Artist, ArtistType } from '../../@types/Artist';
 import { MouseEvent } from 'react';
+import { ArtistContainer, ArtistsContainer } from './styles';
 
 export function Artists() {
     const [token, setToken] = useOutletContext<String>()
@@ -32,16 +33,6 @@ export function Artists() {
             console.log(res1, res2)
             setArtists([{type: 'last-month', artists: res1.data.items}, {type: 'last-six-months', artists: res2.data.items}, {type: 'all-time', artists: res3.data.items}])
         }))
-        // axios.get('https://api.spotify.com/v1/me/top/artists', {
-        // headers: {
-        //     Authorization: `Bearer ${token}`
-        // },
-        // }).then(res => {
-        //     // console.log(res.data);
-        //     setArtists(res.data.items);
-        // }).catch(e => {
-        //     console.log(`error: ${e}`);
-        // })
     }, [token])
 
     function handleSelectOption(e: MouseEvent<HTMLElement>) {
@@ -49,7 +40,7 @@ export function Artists() {
     }
 
     return (
-        <>
+        <ArtistsContainer>
             <h1>Mais tocados</h1>
             <div>
                 <button id='last-month' className={selectedItem === "last-month" ? "selected" : "" } onClick={handleSelectOption}>último mês</button>
@@ -59,17 +50,18 @@ export function Artists() {
             <div>
                 <ul>
                     {artists.find(x => x.type === selectedItem)?.artists.map((artist: Artist) => {
-                        return <li key={artist.id}>
-                            <img src={artist.images[2].url} alt={artist.name} />
+                        return <ArtistContainer key={artist.id}>
+                            <div>
+                            <img src={artist.images[0].url} alt={artist.name} />
                             <div>
                                 <h2>{artist.name}</h2>
-                                <p>Gênero principal: {artist.genres[0]}</p>
-                                <p>Poularidade: {artist.popularity}</p>
+                                <span>{artist.genres[0]}</span>
                             </div>
-                        </li>
+                            </div>
+                        </ArtistContainer>
                     })}
                 </ul>
             </div>
-        </>
+        </ArtistsContainer>
     )
 }
