@@ -12,7 +12,7 @@ export function DefaultLayout(props: any) {
     let token = window.localStorage.getItem("token")
 
     if (!token && hash) {
-        token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1]
+        token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token"))?.split("=")[1]!
 
         window.location.hash = ""
         console.log(token);

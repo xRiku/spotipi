@@ -8,9 +8,11 @@ export const HeaderContainer = styled.header`
     margin-bottom: 1rem;
     padding: 0.5rem 2rem;
     background-color: #000;
+    width: 100%;
 
     img {
-        height: 4rem;
+        /* height: 4rem; */
+        width: 4rem;
         border-radius: 50%;
         /* margin-right: 2rem; */
         /* margin-bottom: 1rem; */
@@ -18,23 +20,30 @@ export const HeaderContainer = styled.header`
 
     span {
         font-size: 2.5rem;
+        width: 20rem;
         color: #fff;
-        /* margin-left: 2rem; */
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        &.icon {
+            justify-content: flex-end;
+        }
     }
 
     div {
+        width: 20rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 30%;
-    }
-
-    a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: 200;
-        &.active { 
-            font-weight: 700;
+        a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 200;
+            &.active { 
+                font-weight: 700;
+            }
         }
     }
+
+
 `

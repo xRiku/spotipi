@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { LoginContainer } from "./styles";
 
 export function Login() {
     const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
@@ -14,7 +15,7 @@ export function Login() {
         let token = window.localStorage.getItem("token")
 
         if (!token && hash) {
-            token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1]
+            token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token"))?.split("=")[1]!
 
             window.location.hash = ""
             console.log(token);
@@ -31,14 +32,12 @@ export function Login() {
     }
 
     return (
-        <div className="App">
-            <header className="App-header">
-                <h1>Spotify React</h1>
-                {!token ?
-                    <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`}>Login
-                        to Spotify</a>
-                    : <button onClick={logout}>Logout</button>}
-            </header>
-        </div>
+        <LoginContainer>
+            <h1>Spotify React</h1>
+            {!token ?
+                <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`}>Login
+                    to Spotify</a>
+                : <button onClick={logout}>Logout</button>}
+        </LoginContainer>
     );
 }

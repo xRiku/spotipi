@@ -34,7 +34,7 @@ export function Header( { userData } : HeaderProps) {
                 <NavLink to='/songs'>Músicas</NavLink>
                 <NavLink to='/artists'>Artistas</NavLink>
             </div>
-            { Object.keys(userData).length !== 0 ? <img onClick={handleClick} src={userData.images[0].url}/> : <></> }
+            { Object.keys(userData).length !== 0 ? <span className='icon'><img onClick={handleClick} src={userData.images[0].url}/></span> : <></> }
         </HeaderContainer>
     )
 }

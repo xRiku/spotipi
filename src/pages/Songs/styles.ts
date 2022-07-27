@@ -39,7 +39,7 @@ export const SongsContainer = styled.div`
         font-size: 3.5rem;
         color: #fff;
         margin-bottom: 3rem;
-
+        align-self: center;
     }
 `;
 
