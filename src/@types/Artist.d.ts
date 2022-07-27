@@ -1,3 +1,9 @@
+type ArtistType = {
+    type: string;
+    artists: Artist[];
+}
+
+
 type Artist = {
     href: string,
     id: string,

@@ -20,5 +20,5 @@ type Album = {
     name: string,
 }
 
-export { Song, Album }
+export { Song, Album, SongType }
 

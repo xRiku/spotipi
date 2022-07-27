@@ -9,7 +9,6 @@ export const SongsContainer = styled.div`
     margin-top: 3rem;
     margin-bottom: 2rem;
     padding: 0.5rem 2rem;
-    background-color: #242425;
     width: 100%;
     /* max-width: 1080px; */
     height: 100%;
@@ -42,6 +41,16 @@ export const SongsContainer = styled.div`
         margin-bottom: 3rem;
 
     }
+`;
+
+
+export const SongContainer = styled.li`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    width: 25rem;
+    margin-bottom: 1rem;
 
     h3 {
         font-size: 1.25rem;
@@ -51,30 +60,34 @@ export const SongsContainer = styled.div`
         width: 3rem;
         text-align: right;
     }
-`;
-
-
-export const SongContainer = styled.li`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: start;
-    max-width: 25rem;
-
-    img {
-        height: 4rem; 
-    }
 
     div {
         color: #fff;
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        justify-content: center;
-        margin-left: 1rem;
+        margin-bottom: 0;
+        background-color: #242425;
+        border-radius: 5px;
+        height: 4rem;
+
+        div {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 0rem 0.75rem;
+        }
+            
+        img {
+            height: 4rem;
+            border-radius: 5px 0 0 5px;
+        }
+    }
+    h2 {
+        font-size: 1rem;
     }
 
     span {
         text-align: center;
+        font-size: 0.75rem;
     }
 `
