@@ -10,12 +10,13 @@ export const SongsContainer = styled.div`
     margin-bottom: 2rem;
     padding: 0.5rem 2rem;
     width: 100%;
-    /* max-width: 1080px; */
     height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    ul {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
 
 
     div {

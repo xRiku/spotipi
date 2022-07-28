@@ -56,11 +56,11 @@ export function Songs() {
                     return <SongContainer key={song.id}>
                         <h3>{index+1}</h3>
                         <div>
-                            <img src={song.album.images[0].url} alt={song.name} />
+                            <img src={song.album.images[0].url} alt={song.name}  />
                             <div>
                                 <h2>{song.name.length > 26 ? song.name.substring(0,22) + ' ...' : song.name}</h2>
                                 <span>{song.artists[0].name}</span>
-                                {song.explicit ? <span>Explicita</span> : <></>}
+                                {/* {song.explicit ? <span>Explicita</span> : <></>} */}
                             </div>
                         </div>
                     </SongContainer>

@@ -21,7 +21,7 @@ export const LoginContainer = styled.div`
         padding: 0.5rem 1rem;
         border-radius: 10px;
         text-decoration: none;
-        font-weight: 200;
+        font-weight: 400;
         &.active {
             font-weight: 700;
         }

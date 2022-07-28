@@ -11,11 +11,13 @@ export const ArtistsContainer = styled.div`
     width: 100%;
     /* max-width: 1080px; */
     height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
 
+    ul {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
 
     div {
         display: flex; 
