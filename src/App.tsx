@@ -6,6 +6,8 @@ import { Songs } from './pages/Songs';
 import { Playlists } from './pages/Playlists';
 import { DefaultLayout } from './layouts/DefaultLayout';
 import { Artists } from './pages/Artists';
+import { Genres } from './pages/Genres';
+import { VictoryPie } from 'victory-pie';
 
 export function App() {
 
@@ -18,6 +20,7 @@ export function App() {
           <Route path="/playlists" element={<Playlists/>} />
           <Route path="/songs" element={<Songs/>} />
           <Route path="/artists" element={<Artists/>} />
+          <Route path="/genres" element={<Genres/>} />
         </Route>
       </Routes>
       <GlobalStyle />

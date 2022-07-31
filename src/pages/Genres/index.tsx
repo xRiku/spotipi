@@ -3,13 +3,16 @@ import { useOutletContext } from 'react-router-dom'
 import axios from 'axios';
 import { Artist, ArtistType } from '../../@types/Artist';
 import { MouseEvent } from 'react';
-import { ArtistContainer, ArtistsContainer } from './styles';
+import { GenreContainer, GenresContainer } from './styles';
+import { GenreType } from '../../@types/Genre';
+import { VictoryPie } from 'victory-pie';
 
-export function Artists() {
+export function Genres() {
     const [token, setToken] = useOutletContext<String>()
 
     const [selectedItem, setSelectedItem] = useState("last-month");
-    const [artists, setArtists] = useState<ArtistType[]>([]);
+    // const [artists, setArtists] = useState<ArtistType[]>([]);
+    const [genres, setGenres] = useState<GenreType[]>([]);
     
     useEffect(() => {
         console.log(`TOKEN: ${token}`)
@@ -30,7 +33,18 @@ export function Artists() {
                 },
             })
         ]).then(axios.spread((res1, res2, res3) => {
-            setArtists([{type: 'last-month', artists: res1.data.items}, {type: 'last-six-months', artists: res2.data.items}, {type: 'all-time', artists: res3.data.items}])
+            console.log(res1, res2)
+            if (res1.status === 200) {
+                let genres = res1.data.items.map((artist: Artist) => artist.genres).flat()
+                console.log(genres)
+            }
+            setGenres([{
+                        type: 'last-month', genres: res1.data.items.map((artist: Artist) => artist.genres).flat()
+                    }, {
+                        type: 'last-six-months', genres: res2.data.items.map((artist: Artist) => artist.genres).flat()
+                    }, {
+                        type: 'all-time', genres: res3.data.items.map((artist: Artist) => artist.genres).flat()
+                    }])
         }))
     }, [token])
 
@@ -39,29 +53,24 @@ export function Artists() {
     }
 
     return (
-        <ArtistsContainer>
+        <GenresContainer>
             <h1>Mais tocados</h1>
             <div>
                 <button id='last-month' className={selectedItem === "last-month" ? "selected" : "" } onClick={handleSelectOption}>último mês</button>
                 <button id='last-six-months' className={selectedItem === "last-six-months" ? "selected" : "" } onClick={handleSelectOption}>últimos 6 meses</button>
                 <button id='all-time' className={selectedItem === "all-time" ? "selected" : "" } onClick={handleSelectOption}>todos os tempos</button>
             </div>
-            <div>
-                <ul>
-                    {artists.find(x => x.type === selectedItem)?.artists.map((artist: Artist, index: number) => {
-                        return <ArtistContainer key={artist.id}>
-                            <h3>{index+1}</h3>
-                            <div>
-                                <img src={artist.images[0].url} alt={artist.name} />
-                                <div>
-                                    <h2>{artist.name.length > 26 ? artist.name.substring(0,22) + ' ...' : artist.name}</h2>
-                                    <span>{artist.genres[0]}</span>
-                                </div>
-                            </div>
-                        </ArtistContainer>
-                    })}
-                </ul>
+            <div className="chart">
+                <VictoryPie
+                    colorScale={["tomato", "orange", "gold", "cyan", "navy" ]}
+                    data={[
+                        { x: "Cats", y: 10 },
+                        { x: "Dogs", y: 10 },
+                        { x: "Birds", y: 10 },
+                        { x: "Birds", y: 10 }
+                    ]}
+                />
             </div>
-        </ArtistsContainer>
+        </GenresContainer>
     )
 }
