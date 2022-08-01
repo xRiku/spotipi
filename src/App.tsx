@@ -7,7 +7,7 @@ import { Playlists } from './pages/Playlists';
 import { DefaultLayout } from './layouts/DefaultLayout';
 import { Artists } from './pages/Artists';
 import { Genres } from './pages/Genres';
-import { VictoryPie } from 'victory-pie';
+import { SongId } from './pages/Songs/SongId';
 
 export function App() {
 
@@ -19,6 +19,7 @@ export function App() {
           <Route path="/" element={<Navigate to="/login" />}/>
           <Route path="/playlists" element={<Playlists/>} />
           <Route path="/songs" element={<Songs/>} />
+          <Route path="/songs/:id" element={<SongId/>} />
           <Route path="/artists" element={<Artists/>} />
           <Route path="/genres" element={<Genres/>} />
         </Route>

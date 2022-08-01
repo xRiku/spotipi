@@ -11,7 +11,7 @@ export const ArtistsContainer = styled.div`
     width: 100%;
     /* max-width: 1080px; */
     height: 100%;
-
+    
     ul {
         width: 100%;
         display: flex;

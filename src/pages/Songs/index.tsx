@@ -1,6 +1,6 @@
 import { useEffect, useState, MouseEvent } from 'react';
 import axios from 'axios';
-import { useOutletContext } from 'react-router-dom';
+import { useNavigate, useOutletContext } from 'react-router-dom';
 import { Song, SongType } from '../../@types/Song';
 import { SongContainer, SongsContainer } from './styles';
 
@@ -8,9 +8,9 @@ import { SongContainer, SongsContainer } from './styles';
 export function Songs() {
 
     const [token, setToken] = useOutletContext<String>()
-    
     const [selectedItem, setSelectedItem] = useState("last-month");
     const [tracks, setTracks] = useState<SongType[]>([]);
+    const navigate = useNavigate();
     
     useEffect(() => {
         console.log(`TOKEN: ${token}`)
@@ -42,6 +42,10 @@ export function Songs() {
         setSelectedItem(e.currentTarget.id);
     }
     
+    function handleClick(id: string) {
+        navigate(`/songs/${id}`)
+    }
+
     return (
         <SongsContainer>
             <h1>Mais tocadas</h1>
@@ -56,6 +60,7 @@ export function Songs() {
                     return <SongContainer key={song.id}>
                         <h3>{index+1}</h3>
                         {/* <a href={song.album.external_urls.spotify}> */}
+                        <button onClick={() => handleClick(song.id)}>
                             <div >
                                 <img src={song.album.images[0].url} alt={song.name}  />
                                 <div>
@@ -64,6 +69,7 @@ export function Songs() {
                                     {/* {song.explicit ? <span>Explicita</span> : <></>} */}
                                 </div>
                             </div>
+                        </button>
                         {/* </a> */}
                     </SongContainer>
                 })}

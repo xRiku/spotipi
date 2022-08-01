@@ -62,7 +62,7 @@ export const SongContainer = styled.li`
         text-align: right;
     }
 
-    a {
+    button {
         display: block;
         height: 100%;
         width: 100%;
