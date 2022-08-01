@@ -2,7 +2,6 @@ import React from "react";
 import { VictoryPie } from "victory-pie";
 
 import Label from "./Label";
-import { PieChartColors } from "./utils/colors";
 
 const PieChart = ({
   innerRadius,

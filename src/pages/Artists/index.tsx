@@ -51,13 +51,15 @@ export function Artists() {
                     {artists.find(x => x.type === selectedItem)?.artists.map((artist: Artist, index: number) => {
                         return <ArtistContainer key={artist.id}>
                             <h3>{index+1}</h3>
-                            <div>
-                                <img src={artist.images[0].url} alt={artist.name} />
+                            <a href={artist.external_urls.spotify}>
                                 <div>
-                                    <h2>{artist.name.length > 26 ? artist.name.substring(0,22) + ' ...' : artist.name}</h2>
-                                    <span>{artist.genres[0]}</span>
+                                    <img src={artist.images[0].url} alt={artist.name} />
+                                    <div>
+                                        <h2>{artist.name.length > 26 ? artist.name.substring(0,22) + ' ...' : artist.name}</h2>
+                                        <span>{artist.genres[0]}</span>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </ArtistContainer>
                     })}
                 </ul>

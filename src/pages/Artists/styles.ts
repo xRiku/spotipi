@@ -61,12 +61,21 @@ export const ArtistContainer = styled.li`
         text-align: right;
     }
 
+    a {
+        display: block;
+        height: 100%;
+        width: 100%;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
     div {
         color: #fff;
         margin-bottom: 0;
         background-color: #242425;
         border-radius: 5px;
         height: 4rem;
+
 
         div {
             height: 100%;

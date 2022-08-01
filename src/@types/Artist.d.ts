@@ -12,6 +12,9 @@ type Artist = {
     images: Array<Image>,
     popularity: number,
     uri: string,
+    external_urls: {
+        spotify: string
+    }
 }
 
 type Image = {
