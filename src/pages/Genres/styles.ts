@@ -26,7 +26,7 @@ export const GenresContainer = styled.div`
         width: 100%;
 
         &.chart {
-            width: 30%;
+            width: 50%;
             
             /* height: 30%; */
             /* background-color: #f5f5f5; */
