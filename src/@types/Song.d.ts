@@ -20,5 +20,15 @@ type Album = {
     name: string,
 }
 
-export { Song, Album, SongType }
+type Features = {
+    danceability: number,
+    energy: number,
+    speechiness: number,
+    acousticness: number,
+    instrumentalness: number,
+    liveness: number,
+    valence: number,
+}
+
+export { Song, Album, SongType, Features }
 

@@ -20,7 +20,6 @@ export function DefaultLayout(props: any) {
     }
 
     setToken(token)
-    console.log(`token: ${token}`)
     if (token) {
 
         axios.get('https://api.spotify.com/v1/me/', {

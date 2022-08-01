@@ -1,0 +1,25 @@
+.arrow {
+    width: 40px;
+    height: 40px;
+}
+
+svg {
+    width: 800px;
+}
+
+.caption {
+    fill: #fff;
+    text-shadow: none !important;
+    font-weight: 700;
+    font-size: 1rem;
+    overflow: visible;
+}
+
+.scale {
+    fill: #c5c5c5;
+}
+
+.shape {
+    fill: #1ed760;
+    stroke: #169c46
+}

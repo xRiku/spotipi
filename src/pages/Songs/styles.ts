@@ -101,3 +101,29 @@ export const SongContainer = styled.li`
         font-size: 0.75rem;
     }
 `
+
+export const SongIdContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    div {
+        :first-child {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            width: 100%;
+            margin-left: 3rem;
+        }
+    }
+
+    div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        /* margin-bottom: 1rem; */
+    }
+`
