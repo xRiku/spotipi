@@ -3,4 +3,10 @@ type GenreType = {
     genres: string[];
 }
 
-export { GenreType };
+
+type genreOcurrence = {
+    x: string;
+    y: number;
+}
+
+export { GenreType, genreOcurrence };

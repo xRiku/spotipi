@@ -26,7 +26,12 @@ export const GenresContainer = styled.div`
         width: 100%;
 
         &.chart {
-            width: 40%;
+            width: 30%;
+            
+            /* height: 30%; */
+            /* background-color: #f5f5f5; */
+            border-radius: 0.5rem;
+
         }
 
         button {
