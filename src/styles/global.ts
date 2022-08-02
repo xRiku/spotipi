@@ -20,6 +20,7 @@ export const GlobalStyle = createGlobalStyle`
     body  {
         background: #121214;
         -webkit-font-smoothing: antialised;
+        overflow-y: scroll;
     }
 
     body, input, textarea, button {

@@ -17,6 +17,7 @@ export const ArtistsContainer = styled.div`
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
+        justify-content: center;
     }
 
     div {
@@ -75,7 +76,7 @@ export const ArtistContainer = styled.li`
         background-color: #242425;
         border-radius: 5px;
         height: 4rem;
-
+        
 
         div {
             height: 100%;

@@ -17,14 +17,14 @@ import "./radar.css"
 //     weight: 'Weight'
 //   };
 
-const captions = {
-    acousticness: 'Acousticness',
+const captions = {    
+    speechiness: 'Speechiness',
+    valence: 'Valence',
     danceability: 'Danceability',
     energy: 'Energy',
-    instrumentalness: 'Instrumentalness',
     liveness: 'Liveness',
-    speechiness: 'Speechiness',
-    valence: 'Valence'
+    instrumentalness: 'Instrumentalness',
+    acousticness: 'Acousticness',
 }
 
 
