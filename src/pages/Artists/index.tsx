@@ -51,7 +51,7 @@ export function Artists() {
                     {artists.find(x => x.type === selectedItem)?.artists.map((artist: Artist, index: number) => {
                         return <ArtistContainer key={artist.id}>
                             <h3>{index+1}</h3>
-                            <a href={artist.external_urls.spotify}>
+                            <a href={artist.external_urls.spotify} target="_blank">
                                 <div>
                                     <img src={artist.images[0].url} alt={artist.name} />
                                     <div>

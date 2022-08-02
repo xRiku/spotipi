@@ -30,14 +30,15 @@ export function Playlists() {
                 <ul>
                     {playlists.map(playlist => {
                         return <PlaylistContainer key={playlist.id}>
+                            <a href={playlist.external_urls.spotify} target="_blank">
                             <div>
-                            <img src={playlist.images[0].url} alt={playlist.name} />
-                            <div>
-                                <h2>{playlist.name}</h2>
-                                {/* <span>{playlist.description}</span> */}
-                                <span>{playlist.tracks.total} músicas </span>
+                                <img src={playlist.images[0].url} alt={playlist.name} />
+                                <div>
+                                    <h2>{playlist.name}</h2>
+                                    <span>{playlist.tracks.total} músicas </span>
+                                </div>
                             </div>
-                            </div>
+                            </a>
                         </PlaylistContainer>
                     }
                     )}

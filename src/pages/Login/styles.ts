@@ -26,4 +26,11 @@ export const LoginContainer = styled.div`
             font-weight: 700;
         }
     }
+
+    button {
+        color: #fff;
+        :hover {
+            text-decoration: underline;
+        }
+    }
 `

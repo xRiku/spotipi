@@ -10,6 +10,9 @@ type Playlist = {
         href: string,
         total: number
     },
+    external_urls: {
+        spotify: string
+    }
 }
 
 

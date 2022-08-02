@@ -59,6 +59,14 @@ export const PlaylistContainer = styled.li`
         text-align: right;
     }
 
+    a {
+        display: block;
+        height: 100%;
+        width: 100%;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
     div {
         color: #fff;
         margin-bottom: 0;
