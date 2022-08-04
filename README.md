@@ -1,8 +1,7 @@
-# SpotiPI 
+<h1 align="center"> SpotiPI </h1>
 
-Desenvolvido por Philipe Marques e João Felipe Gobeti.
 
-> SpotiPI é uma aplicação WEB para visualizar os principais dados retornados pela API pública do Spotify através de um design simples e moderno.
+<p align="center"> SpotiPI é uma aplicação WEB para visualizar os principais dados retornados pela API pública do Spotify através de um design simples e moderno. </p>
 
 # 📦 Instalação
 
@@ -44,7 +43,14 @@ Se não clicar em "SAVE" as alterações não serão salvas e se preencher o cam
 
 ### Execução
 Instalando as dependências e rodando a aplicação utilizando yarn:
-```bash
-> yarn
-> yarn dev
+```sh
+yarn
+yarn dev
 ```
+
+# Autores
+👤 **Philipe Aguiar Marques**
+- Github: [@xRiku](https://github.com/xRiku) 
+
+👤 **João Felipe Gobeti Calenzani**
+- Github: [@joaocalen](https://github.com/joaocalen) 

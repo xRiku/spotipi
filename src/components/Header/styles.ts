@@ -27,6 +27,9 @@ export const HeaderContainer = styled.header`
         justify-content: start;
         &.icon {
             justify-content: flex-end;
+            img {
+                cursor: pointer;
+            }
         }
     }
 
