@@ -6,11 +6,10 @@ import { PlaylistContainer, PlaylistsContainer } from './styles';
 
 export function Playlists() {
     
-    const [token, setToken] = useOutletContext<String>()
     const [playlists, setPlaylits] = useState<Playlist[]>([]);
 
     useEffect(() => {
-        console.log(`TOKEN: ${token}`)
+        let token = window.localStorage.getItem("token")
         axios.get('https://api.spotify.com/v1/me/playlists', {
         headers: {
             Authorization: `Bearer ${token}`
@@ -21,7 +20,7 @@ export function Playlists() {
         }).catch(e => {
             console.log(`error: ${e}`);
         })
-    }, [token])
+    }, [])
     
     return (
         <PlaylistsContainer>

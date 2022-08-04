@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom'
 import { HeaderContainer } from './styles'
 import { MouseEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Path } from 'victory-core'
 
 type HeaderProps = {
     userData: userInfo,
@@ -28,7 +29,9 @@ export function Header( { userData } : HeaderProps) {
     
     return (
         <HeaderContainer>
-            <span>SpotiPI</span>
+            <span>
+                SpotiPI
+            </span>
             <div>
                 <NavLink to='/playlists'>Playlists</NavLink>
                 <NavLink to='/songs'>Músicas</NavLink>

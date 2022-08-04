@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useOutletContext } from 'react-router-dom'
 import axios from 'axios';
 import { Artist, ArtistType } from '../../@types/Artist';
 import { MouseEvent } from 'react';
 import { ArtistContainer, ArtistsContainer } from './styles';
 
 export function Artists() {
-    const [token, setToken] = useOutletContext<String>()
-
+    let token = window.localStorage.getItem("token")
     const [selectedItem, setSelectedItem] = useState("last-month");
     const [artists, setArtists] = useState<ArtistType[]>([]);
     
@@ -32,7 +30,7 @@ export function Artists() {
         ]).then(axios.spread((res1, res2, res3) => {
             setArtists([{type: 'last-month', artists: res1.data.items}, {type: 'last-six-months', artists: res2.data.items}, {type: 'all-time', artists: res3.data.items}])
         }))
-    }, [token])
+    }, [])
 
     function handleSelectOption(e: MouseEvent<HTMLElement>) {
         setSelectedItem(e.currentTarget.id);

@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useOutletContext } from 'react-router-dom'
 import axios from 'axios';
 import { Artist, ArtistType } from '../../@types/Artist';
 import { MouseEvent } from 'react';
@@ -12,13 +11,14 @@ import { VictoryPie } from 'victory-pie';
 
 
 export function Genres() {
-    const [token, setToken] = useOutletContext<String>()
 
     const [selectedItem, setSelectedItem] = useState("last-month");
     // const [artists, setArtists] = useState<ArtistType[]>([]);
     const [genres, setGenres] = useState<GenreType[]>([]);
     
     useEffect(() => {
+
+        let token = window.localStorage.getItem("token")
         console.log(`TOKEN: ${token}`)
         axios.all([
             axios.get('https://api.spotify.com/v1/me/top/artists?time_range=short_term', {
@@ -50,7 +50,7 @@ export function Genres() {
                         type: 'all-time', genres: res3.data.items.map((artist: Artist) => artist.genres).flat()
                     }])
         }))
-    }, [token])
+    }, [])
 
     function handleSelectOption(e: MouseEvent<HTMLElement>) {
         setSelectedItem(e.currentTarget.id);

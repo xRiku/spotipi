@@ -8,6 +8,7 @@ import { DefaultLayout } from './layouts/DefaultLayout';
 import { Artists } from './pages/Artists';
 import { Genres } from './pages/Genres';
 import { SongId } from './pages/Songs/SongId';
+import { Outlet } from 'react-router-dom';
 
 export function App() {
 
@@ -15,12 +16,20 @@ export function App() {
     return <h1 style={{color: "#fff"}}>Not Found</h1>
   }
 
-  function RouteWrapper(Component: any) {
-        const token = window.localStorage.getItem("token")
-        if (!token) {
-          return <Navigate to="/login" replace />
+  function RouteWrapper(props: any) {
+        const hash = window.location.hash
+        let token = window.localStorage.getItem("token")
+        if (token) {
+          return <Outlet />
         } else {
-          return <Component />
+          if (hash) {
+            token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token"))?.split("=")[1]!
+            window.location.hash = ""
+            window.localStorage.setItem("token", token)
+            return <Outlet />
+          } else {
+            return <Navigate to="/login" replace />
+          }
         }
   }
 

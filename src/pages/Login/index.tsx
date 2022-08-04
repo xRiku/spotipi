@@ -16,7 +16,6 @@ export function Login() {
 
         if (!token && hash) {
             token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token"))?.split("=")[1]!
-
             window.location.hash = ""
             console.log(token);
             window.localStorage.setItem("token", token)
@@ -33,7 +32,9 @@ export function Login() {
 
     return (
         <LoginContainer>
-            <h1>SpotiPI</h1>
+                <h1>
+                    SpotiPI
+                </h1>
             {!token ?
                 <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}&show_dialog=true`}>Login
                     to Spotify</a>

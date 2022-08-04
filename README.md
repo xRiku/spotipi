@@ -1,3 +1,6 @@
+<p align="center">
+    <img src="src/resources/images/icon.png" width="140px"/>
+</p>
 <h1 align="center"> SpotiPI </h1>
 
 
@@ -54,3 +57,6 @@ yarn dev
 
 👤 **João Felipe Gobeti Calenzani**
 - Github: [@joaocalen](https://github.com/joaocalen) 
+
+# Resources
+Ícone de app de música criado por [laterunlabs](https://www.flaticon.com/free-icons/music-app) - Flaticon

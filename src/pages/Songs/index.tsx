@@ -1,18 +1,19 @@
 import { useEffect, useState, MouseEvent } from 'react';
 import axios from 'axios';
-import { useNavigate, useOutletContext } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Song, SongType } from '../../@types/Song';
 import { SongContainer, SongsContainer } from './styles';
 
 
 export function Songs() {
 
-    const [token, setToken] = useOutletContext<String>()
     const [selectedItem, setSelectedItem] = useState("last-month");
     const [tracks, setTracks] = useState<SongType[]>([]);
     const navigate = useNavigate();
     
     useEffect(() => {
+
+        let token = window.localStorage.getItem("token")
         console.log(`TOKEN: ${token}`)
         axios.all([
             axios.get('https://api.spotify.com/v1/me/top/tracks?time_range=short_term', {
@@ -35,7 +36,7 @@ export function Songs() {
             setTracks([{type: 'last-month', songs: res1.data.items}, {type: 'last-six-months', songs: res2.data.items}, {type: 'all-time', songs: res3.data.items}])
         }))
 
-    }, [token])
+    }, [])
 
 
     function handleSelectOption(e: MouseEvent<HTMLElement>) {
@@ -59,18 +60,15 @@ export function Songs() {
                     console.log(song)
                     return <SongContainer key={song.id}>
                         <h3>{index+1}</h3>
-                        {/* <a href={song.album.external_urls.spotify}> */}
                         <button onClick={() => handleClick(song.id)}>
                             <div >
                                 <img src={song.album.images[0].url} alt={song.name}  />
                                 <div>
                                     <h2>{song.name.length > 26 ? song.name.substring(0,22) + ' ...' : song.name}</h2>
                                     <span>{song.artists[0].name}</span>
-                                    {/* {song.explicit ? <span>Explicita</span> : <></>} */}
                                 </div>
                             </div>
                         </button>
-                        {/* </a> */}
                     </SongContainer>
                 })}
            

@@ -1,21 +1,12 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { useOutletContext, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import RadarChart from 'react-svg-radar-chart';
 import 'react-svg-radar-chart/build/css/index.css'
 import { Features } from '../../@types/Song'
 import { SongIdContainer } from "./styles";
 import { IoMdArrowBack } from "react-icons/io";
 import "./radar.css"
-
-// const captions = {
-//     // columns
-//     battery: 'Battery Capacity',
-//     design: 'Design',
-//     useful: 'Usefulness',
-//     speed: 'Speed',
-//     weight: 'Weight'
-//   };
 
 const captions = {    
     speechiness: 'Speechiness',
@@ -31,14 +22,13 @@ const captions = {
 export function SongId () {
 
     const { id } = useParams<{id: string}>()
-    const [token, setToken] = useOutletContext<String>()
     const [features, setFeatures] = useState<Features | undefined>(undefined)
 
     useEffect((): void => {
         const storageToken = localStorage.getItem("token")
         axios.get(`https://api.spotify.com/v1/audio-features/${id}`, {
                 headers: {
-                    Authorization: `Bearer ${storageToken || token}`
+                    Authorization: `Bearer ${storageToken}`
                 },
             }).then(res => {
                 console.log(res.data)
