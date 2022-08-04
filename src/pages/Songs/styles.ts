@@ -109,26 +109,33 @@ export const SongContainer = styled.li`
 
 export const SongIdContainer = styled.div`
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: space-between;
     width: 100%;
-    div {
-        :first-child {
-            display: flex;
-            align-items: center;
-            justify-content: start;
-            width: 100%;
-            margin-left: 3rem;
-        }
+
+    h1 {
+        font-size: 2.5rem;
+        color: #fff;
+        margin-bottom: 1rem;
+    }
+    svg {
+        margin-left: 2rem;
     }
 
     div {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
-        justify-content: space-evenly;
-        width: 100%;
-        /* margin-bottom: 1rem; */
+        img {
+            width: 8rem;
+            border-radius: 2px;
+        }
+        :last-child, :first-child {
+            width: 5.5rem;
+        }
+        :first-child {
+            justify-content: flex-start;
+        }
     }
+
 `

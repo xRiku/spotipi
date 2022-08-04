@@ -23,20 +23,29 @@ export function SongId () {
 
     const { id } = useParams<{id: string}>()
     const [features, setFeatures] = useState<Features | undefined>(undefined)
+    const [name, setName] = useState<string>("")
+    const [imgSrc, setImgSrc] = useState<string>("")
 
     useEffect((): void => {
         const storageToken = localStorage.getItem("token")
-        axios.get(`https://api.spotify.com/v1/audio-features/${id}`, {
+        axios.all([
+            axios.get(`https://api.spotify.com/v1/audio-features/${id}`, {
+                    headers: {
+                        Authorization: `Bearer ${storageToken}`
+                    },
+                }),
+            axios.get(`https://api.spotify.com/v1/tracks/${id}`, {
                 headers: {
                     Authorization: `Bearer ${storageToken}`
                 },
-            }).then(res => {
-                console.log(res.data)
-                const { acousticness, danceability, energy, instrumentalness, liveness, speechiness, valence } = res.data
+            }),
+        ]).then(axios.spread((res1, res2) => {
+            const { acousticness, danceability, energy, instrumentalness, liveness, speechiness, valence } = res1.data
                 setFeatures({acousticness, danceability, energy, instrumentalness, liveness, speechiness, valence})
-            }).catch(err => {
-                console.log(err);
-              })
+            const { name } = res2.data
+                setName(name)
+                setImgSrc(res2.data.album.images[0].url)
+        }))
     }, [])
 
 
@@ -46,16 +55,22 @@ export function SongId () {
                 <IoMdArrowBack className="arrow" onClick={() => window.history.back()} style={{color:"#fff", fontSize: 200, cursor: "pointer"}}/>
             </div>
             <div>
-            {
-                features !== undefined && 
-                <RadarChart
-                    captions={captions}
-                    data={[{data: features, meta: { color: 'black' }}]}
-                    size={600}
-                />
-                
-            }
+                <img src={imgSrc}></img>
+                {name && <h1>{name}</h1>}
+                <div>
+                    {
+                        features !== undefined && 
+                        <RadarChart
+                        captions={captions}
+                        data={[{data: features, meta: { color: 'black' }}]}
+                        size={400}
+                        options={{wrapCaptionAt: 30}}
+                        />
+                        
+                    }
+                </div>
             </div>
+            <div></div>
         </SongIdContainer>
     )
 }

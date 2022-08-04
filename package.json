@@ -9,16 +9,19 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "chart.js": "^3.9.1",
     "react": "^18.0.0",
+    "react-chartjs-2": "^4.3.1",
     "react-dom": "^18.0.0",
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.3.0",
-    "react-svg-radar-chart": "^1.4.0",
+    "react-svg-radar-chart": "1.4.0",
     "styled-components": "^5.3.5",
     "victory-core": "^36.5.3",
     "victory-pie": "^36.5.3"
   },
   "devDependencies": {
+    "@types/chart.js": "^2.9.37",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@types/react-svg-radar-chart": "^1.2.3",
