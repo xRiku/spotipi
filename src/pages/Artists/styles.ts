@@ -76,7 +76,10 @@ export const ArtistContainer = styled.li`
         background-color: #242425;
         border-radius: 5px;
         height: 4rem;
-        
+        :hover { 
+            filter: brightness(1.2);
+            transition-duration: 0.2s;
+        }
 
         div {
             height: 100%;

@@ -16,7 +16,6 @@ export const PlaylistsContainer = styled.div`
     scrollbar-width: none;
     -ms-overflow-style: none;
 
-
     div {
         display: flex; 
         justify-content: space-evenly;
@@ -32,6 +31,10 @@ export const PlaylistsContainer = styled.div`
             }
         }
         margin-bottom: 2rem;
+        .nothing-found {
+            font-size: 1.5rem;
+            color: #fff;
+        }
     }
 
     h1 {
@@ -48,6 +51,7 @@ export const PlaylistContainer = styled.li`
     justify-content: start;
     width: 25rem;
     margin-bottom: 1rem;
+
 
     h3 {
         font-size: 1.25rem;
@@ -72,6 +76,11 @@ export const PlaylistContainer = styled.li`
         background-color: #242425;
         border-radius: 5px;
         height: 4rem;
+
+        :hover { 
+            filter: brightness(1.2);
+            transition-duration: 0.2s;
+        }
 
         div {
             height: 100%;

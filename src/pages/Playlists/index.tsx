@@ -24,10 +24,10 @@ export function Playlists() {
     
     return (
         <PlaylistsContainer>
-            <h1>Bem vindo</h1>
+            <h1>Bem-vindo</h1>
             <div>
                 <ul>
-                    {playlists.map(playlist => {
+                    {playlists.length > 0 ? playlists.map(playlist => {
                         return <PlaylistContainer key={playlist.id}>
                             <a href={playlist.external_urls.spotify} target="_blank">
                             <div>
@@ -39,8 +39,9 @@ export function Playlists() {
                             </div>
                             </a>
                         </PlaylistContainer>
+                        })
+                    : <div className='nothing-found'>Nenhuma playlist encontrada :(</div>
                     }
-                    )}
                 </ul>
             </div>
         </PlaylistsContainer>

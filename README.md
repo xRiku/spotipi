@@ -1,21 +1,16 @@
-<p align="center">
-    <img src="src/resources/images/icon.png" width="140px"/>
-</p>
-<h1 align="center"> SpotiPI </h1>
-
-
-<p align="center"> SpotiPI é uma aplicação WEB para visualizar os principais dados retornados pela API pública do Spotify através de um design simples e moderno. </p>
+# SpotiPI 
+SpotiPI é uma aplicação WEB para visualizar os principais dados retornados pela API pública do Spotify através de um design simples e moderno. 
 
 # 📦 Instalação
 
 ### Criando aplicação
-Para rodar a aplicação será necessário criar ou logar com uma conta no site de desenvolvedores do [Spotify](https://developer.spotify.com/dashboard/).
+Para executar a aplicação será necessário criar ou logar com uma conta no site de desenvolvedores do [Spotify](https://developer.spotify.com/dashboard/).
 Depois de logado, basta clicar em "create an app".
 <p align="center">
     <img src=".github/dashboard.png" width="85%" height="auto" />
 </p>
 
-Para criar uma aplicação é necessário especificar um nome no campo "App name" e uma descrição em "App description", além de concordar com os termos de uso marcando a checkbox e por fim clicar em create.
+Para criar uma aplicação é necessário especificar um nome no campo "App name" e uma descrição em "App description", além de concordar com os termos de uso marcando a checkbox e por fim basta clicar em "create".
 <p align="center">
     <img src=".github/spotifyfordevs.png" width="45%" height="auto" />
 </p>
@@ -23,9 +18,9 @@ Para criar uma aplicação é necessário especificar um nome no campo "App name
 
 ### Clonando repositório
 Clonando o repositório utilizando ssh:
-```bash
-> git clone git@github.com:xRiku/spotipi.git
-> cd spotipi
+```sh
+git clone git@github.com:xRiku/spotipi.git
+cd spotipi
 ```
 
 ### Criação de credenciais
@@ -57,6 +52,3 @@ yarn dev
 
 👤 **João Felipe Gobeti Calenzani**
 - Github: [@joaocalen](https://github.com/joaocalen) 
-
-# Resources
-Ícone de app de música criado por [laterunlabs](https://www.flaticon.com/free-icons/music-app) - Flaticon

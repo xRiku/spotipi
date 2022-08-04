@@ -13,7 +13,6 @@ import { VictoryPie } from 'victory-pie';
 export function Genres() {
 
     const [selectedItem, setSelectedItem] = useState("last-month");
-    // const [artists, setArtists] = useState<ArtistType[]>([]);
     const [genres, setGenres] = useState<GenreType[]>([]);
     
     useEffect(() => {
@@ -68,7 +67,6 @@ export function Genres() {
                 });
             }
         })
-        // return dict.sort((a, b) => b.y - a.y);
         return dict;
     }
     

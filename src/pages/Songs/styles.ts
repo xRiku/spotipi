@@ -25,6 +25,10 @@ export const SongsContainer = styled.div`
         justify-content: space-evenly;
         align-items: center;
         width: 100%;
+        :hover { 
+            filter: brightness(1.2);
+            transition-duration: 0.2s;
+        }
 
         button {
             color: #fff;
