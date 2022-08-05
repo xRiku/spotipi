@@ -4,10 +4,8 @@ import { Artist, ArtistType } from '../../@types/Artist';
 import { MouseEvent } from 'react';
 import { GenreContainer, GenresContainer } from './styles';
 import { genreOcurrence, GenreType } from '../../@types/Genre';
+//@ts-ignore
 import PieChart from "../../components/PieChart";
-// import { VictoryPie } from 'victory-pie';
-import { VictoryLabel } from 'victory-core';
-import { VictoryPie } from 'victory-pie';
 
 
 export function Genres() {

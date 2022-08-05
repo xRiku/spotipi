@@ -16,7 +16,7 @@ export function App() {
     return <h1 style={{color: "#fff"}}>Not Found</h1>
   }
 
-  function RouteWrapper(props: any) {
+  function RouteWrapper() {
         const hash = window.location.hash
         let token = window.localStorage.getItem("token")
         if (token) {

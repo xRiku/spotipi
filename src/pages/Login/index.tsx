@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { IoMdStats } from "react-icons/io";
 import { LoginContainer } from "./styles";
 
 export function Login() {
@@ -32,13 +33,14 @@ export function Login() {
 
     return (
         <LoginContainer>
-                <h1>
-                    SpotiPI
-                </h1>
+            <span>
+                <IoMdStats color='#fff'/>
+                SpotiPI
+            </span>
             {!token ?
-                <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}&show_dialog=true`}>Login
-                    to Spotify</a>
-                : <button onClick={logout}>Logout</button>}
+            <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}&show_dialog=true`}>Login
+                to Spotify</a>
+            : <button onClick={logout}>Logout</button>}
         </LoginContainer>
     );
 }

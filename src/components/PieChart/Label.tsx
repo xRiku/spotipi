@@ -3,7 +3,22 @@ import React from "react";
 import LabelLine from "./LabelLine";
 import { getXOffset, getYOffset, getAverage } from "./utils/math";
 
-const Label = (props) => {
+type labelProps = {
+  index: number;
+  datum: any;
+  innerRadius: number;
+  radius: number;
+  slice: {
+    startAngle: number;
+    endAngle: number;
+  };
+  nameKey: string;
+  valueKey: string;
+  cx: number;
+  cy: number;
+};
+
+const Label = (props: labelProps) => {
   const {
     index,
     datum,

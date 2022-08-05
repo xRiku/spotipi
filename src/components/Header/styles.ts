@@ -11,11 +11,8 @@ export const HeaderContainer = styled.header`
     width: 100%;
 
     img {
-        /* height: 4rem; */
         width: 4rem;
         border-radius: 50%;
-        /* margin-right: 2rem; */
-        /* margin-bottom: 1rem; */
     }
 
     span {
@@ -30,6 +27,9 @@ export const HeaderContainer = styled.header`
             img {
                 cursor: pointer;
             }
+        }
+        svg {
+            width: 3rem;
         }
     }
 

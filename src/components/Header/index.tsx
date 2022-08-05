@@ -3,6 +3,7 @@ import { HeaderContainer } from './styles'
 import { MouseEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Path } from 'victory-core'
+import { IoMdStats } from 'react-icons/io'
 
 type HeaderProps = {
     userData: userInfo,
@@ -18,18 +19,17 @@ type Image = {
 }
 
 export function Header( { userData } : HeaderProps) {
-    // console.log(userData);
     const navigate = useNavigate();
 
     function handleClick (e: MouseEvent<HTMLElement>) {
         localStorage.removeItem('token');
-        // window.location.reload();
         navigate("/login");
     }
     
     return (
         <HeaderContainer>
-            <span>
+            <span className='logo'>
+                <IoMdStats color='#fff'/>
                 SpotiPI
             </span>
             <div>

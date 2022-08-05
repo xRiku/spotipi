@@ -2,7 +2,15 @@ import React from "react";
 
 import { getXOffset, getYOffset } from "./utils/math";
 
-const LabelLine = (props) => {
+type labelLineProps = {
+  cx: number;
+  cy: number;
+  midAngle: number;
+  middleRadius: number;
+  radius: number;
+};
+
+const LabelLine = (props: labelLineProps) => {
   const { cx, cy, midAngle, middleRadius, radius } = props;
   const xStart = cx + getXOffset(middleRadius, midAngle);
   const yStart = cy + getYOffset(middleRadius, midAngle);

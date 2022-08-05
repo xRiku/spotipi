@@ -9,7 +9,6 @@ export const GenresContainer = styled.div`
     margin-bottom: 2rem;
     padding: 0.5rem 2rem;
     width: 100%;
-    /* max-width: 1080px; */
     height: 100%;
 
     ul {
@@ -26,12 +25,10 @@ export const GenresContainer = styled.div`
         width: 100%;
 
         &.chart {
-            width: 50%;
-            
-            /* height: 30%; */
-            /* background-color: #f5f5f5; */
+            max-width: 60%;
             border-radius: 0.5rem;
-
+            width: 300rem;
+            margin: 0;
         }
 
         button {
