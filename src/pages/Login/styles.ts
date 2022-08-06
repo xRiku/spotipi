@@ -2,12 +2,16 @@ import styled from "styled-components";
 
 
 export const LoginContainer = styled.div`
-    /* h1 {
+    h1 {
         font-size: 2.5rem;
         color: #fff;
         margin-bottom: 1rem;
-        justify-content: flex-end;
-    } */
+        font-family: "Open Sans", sans-serif;
+        width: 50%;
+        text-align: center;
+        font-weight: 700;
+        margin-top: 5rem;
+    }
     span {
         font-size: 2.5rem;
         width: 20rem;
@@ -27,25 +31,25 @@ export const LoginContainer = styled.div`
     justify-content: center;
     width: 100%;
     height: 100%;
-    background-color: #000;
-    padding: 1rem;
     a {
         background-color: #1DB954;
         color: #fff;
+        font-size: 1rem;
         font-weight: 700;
-        padding: 0.5rem 1rem;
-        border-radius: 10px;
+        padding: 1.2rem 3rem;
+        margin-top: 2rem;
+        border-radius: 40px;
         text-decoration: none;
-        font-weight: 400;
-        &.active {
-            font-weight: 700;
+        :hover {
+            transform: scale(1.1,1.05);
+            filter: brightness(1.05);
         }
     }
 
     button {
         color: #fff;
         :hover {
-            text-decoration: underline;
+            text-decoration: underline
         }
     }
 `

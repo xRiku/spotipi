@@ -31,6 +31,28 @@ export const HeaderContainer = styled.header`
         svg {
             width: 3rem;
         }
+
+        &.login {
+            justify-content: flex-end;
+            a {
+                color: #fff;
+                display: flex;
+                align-items: center;
+                font-size: 1.5rem;
+                text-decoration: none;
+                svg {
+                    width: 2rem;
+                    fill: #1DB954;
+                }
+                svg, p {
+                    :hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        
     }
 
     div {

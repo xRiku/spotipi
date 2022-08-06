@@ -57,7 +57,6 @@ export function Songs() {
             </div>
             <ul>
                 {tracks.find(x => x.type === selectedItem)?.songs.map((song: Song, index: number) => {
-                    console.log(song)
                     return <SongContainer key={song.id}>
                         <h3>{index+1}</h3>
                         <button onClick={() => handleClick(song.id)}>

@@ -36,8 +36,8 @@ export function App() {
   return (
     <>
       <Routes>
-        <Route path="/login" element={<Login/>} />
         <Route path="/" element={<DefaultLayout />}>
+        <Route path="/login" element={<Login/>} />
           <Route path="/" element={<Navigate to="/login" />}/>
           <Route element={<RouteWrapper/>}>
             <Route path="/playlists" element={<Playlists/>} />

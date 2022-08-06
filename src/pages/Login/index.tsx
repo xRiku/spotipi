@@ -33,13 +33,13 @@ export function Login() {
 
     return (
         <LoginContainer>
-            <span>
-                <IoMdStats color='#fff'/>
-                SpotiPI
-            </span>
+            <h1>
+                Visualize suas principais informações do Spotify de forma simples e rápida.
+            </h1>
             {!token ?
-            <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}&show_dialog=true`}>Login
-                to Spotify</a>
+            <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}&show_dialog=true`}>
+                Fazer Login
+            </a>
             : <button onClick={logout}>Logout</button>}
         </LoginContainer>
     );
