@@ -1,9 +1,15 @@
 # SpotiPI 
+
+## 📜 Sobre o projeto
 SpotiPI é uma aplicação WEB para visualizar os principais dados retornados pela API pública do Spotify através de um design simples e moderno. 
+<p align="center">
+    <img src=".github/demo.gif" width="100%" height="auto" />
+</p>
 
-# 📦 Instalação
 
-### Criando aplicação
+## 📦 Instalação
+
+#### Criando aplicação
 Para executar a aplicação será necessário criar ou logar com uma conta no site de desenvolvedores do [Spotify](https://developer.spotify.com/dashboard/).
 Depois de logado, basta clicar em "create an app".
 <p align="center">
@@ -16,14 +22,14 @@ Para criar uma aplicação é necessário especificar um nome no campo "App name
 </p>
 
 
-### Clonando repositório
+#### Clonando repositório
 Clonando o repositório utilizando ssh:
 ```sh
 git clone git@github.com:xRiku/spotipi.git
 cd spotipi
 ```
 
-### Criação de credenciais
+#### Criação de credenciais
 É necessário criar um arquivo .env na raíz do projeto com as seguintes variáveis: VITE_CLIENT_ID, VITE_CLIENT_SECRET, VITE_REDIRECT_URL.
 Eles podem ser obtidos e definidos através do dashboard overview
 <p align="center">
@@ -39,14 +45,14 @@ Após definir um campo é necessário clicar em "ADD" e depois em "SAVE".
 <br></br>
 Se não clicar em "SAVE" as alterações não serão salvas e se preencher o campo, mas não clicar em "ADD" caso queira trocar o endereço de redirecionamento o endereço não será modificado. Redirect url é um endereço para o qual a aplicação redirecio após logar com o spotify.
 
-### Execução
+#### Execução
 Instalando as dependências e rodando a aplicação utilizando yarn:
 ```sh
 yarn
 yarn dev
 ```
 
-# Autores
+## Autores
 👤 **Philipe Aguiar Marques**
 - Github: [@xRiku](https://github.com/xRiku) 
 
