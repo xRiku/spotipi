@@ -7,7 +7,7 @@ export function Login() {
     const REDIRECT_URI = import.meta.env.VITE_REDIRECT_URL;
     const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
     const RESPONSE_TYPE = "token"
-    const SCOPE = "user-top-read"
+    const SCOPE = "user-top-read user-read-private user-read-email"
 
     const [token, setToken] = useState<string | null>("")
 

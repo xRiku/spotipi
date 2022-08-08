@@ -1,4 +1,3 @@
-import { Header } from './components/Header';
 import { GlobalStyle } from './styles/global';
 import { Navigate, Route, Routes, } from 'react-router-dom';
 import { Login } from './pages/Login';
@@ -9,6 +8,7 @@ import { Artists } from './pages/Artists';
 import { Genres } from './pages/Genres';
 import { SongId } from './pages/Songs/SongId';
 import { Outlet } from 'react-router-dom';
+import { Profile } from './pages/Profile';
 
 export function App() {
 
@@ -45,6 +45,7 @@ export function App() {
             <Route path="/songs/:id" element={<SongId/>} />
             <Route path="/artists" element={<Artists/>} />
             <Route path="/genres" element={<Genres/>} />
+            <Route path="/profile" element={<Profile />} />
           </Route>
         </Route>
         <Route path="*" element={<NotFoundComponent/>} />

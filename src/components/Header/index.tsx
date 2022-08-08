@@ -27,8 +27,8 @@ export function Header( { userData } : HeaderProps) {
     const RESPONSE_TYPE = "token"
     const SCOPE = "user-top-read"
     function handleClick (e: MouseEvent<HTMLElement>) {
-        localStorage.removeItem('token');
-        navigate("/login");
+        // localStorage.removeItem('token');
+        navigate("/profile");
     }
     
     return (
