@@ -112,12 +112,6 @@ export const SongIdContainer = styled.div`
     align-items: flex-start;
     justify-content: space-between;
     width: 100%;
-
-    h1 {
-        font-size: 2.5rem;
-        color: #fff;
-        margin-bottom: 1rem;
-    }
     svg {
         margin-left: 2rem;
     }
@@ -126,16 +120,50 @@ export const SongIdContainer = styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;
-        img {
-            width: 8rem;
-            border-radius: 2px;
+        &.song-info {
+            width: 100%;
+            color: #fff;
+            margin-bottom: 3rem;
+            margin-top: 2rem;
+            padding: 1rem 0rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            
+            div {
+                h1 {
+                    font-size: 2.3rem;
+                    font-weight: 700;
+                    margin-bottom: 1rem;
+                    
+                }
+                h2{
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                }
+                :last-child {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    max-width: 30rem;
+                }
+            }
+            img {
+                width: 8rem;
+                border-radius: 2px;
+                margin-right: 1rem;
+            }
         }
-        :last-child, :first-child {
+        &.arrow-div {
             width: 5.5rem;
-        }
-        :first-child {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
             justify-content: flex-start;
         }
-    }
-
+        &.align-support {
+            width: 5.5rem;
+        }
+ 
+}
 `
