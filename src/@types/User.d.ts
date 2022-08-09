@@ -5,7 +5,9 @@ type User = {
     followers: {
         total: number
     }
-    email: string
+    email: string,
+    product: string,
+    country: string,
 }
 
 export { User };

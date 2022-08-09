@@ -23,29 +23,52 @@ export const ProfileContainer = styled.div`
             font-weight: 400;
         }
 
+        h4 {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
         div {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            justify-content: center;
+            justify-content: space-evenly;
+            /* height: 15rem; */
         }
         img {
-            width: 10rem;
+            width: 13rem;
             border-radius: 3px;
             margin-right: 1rem;
         }
 
+        &.image-div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            svg {
+                width: 2rem;
+            }
+        }
     }
     button {
-        border-color: red;
+        /* border-color: white; */
         padding: 1rem;
         border-radius: 5px;
-        color: red;
+        /* color: red; */
+        color: #fff; 
         border-style: solid;
-        background-color: #f5f5f5; 
+        font-weight: 700;
+        background-color: #000; 
+        display: flex;
+        align-items: center;
+        svg {
+            width: 1.4rem;
+            /* height: 1.5rem; */
+            color: #C25;
+        }
         :hover {
-            background-color: red;
-            color: #fff; 
+            background-color: #242424;
         }
     }
 `
