@@ -43,7 +43,7 @@ Após definir um campo é necessário clicar em "ADD" e depois em "SAVE".
 <br></br>
 🚨 <b>ATENÇÃO</b> 🚨
 <br></br>
-Se não clicar em "SAVE" as alterações não serão salvas e se preencher o campo, mas não clicar em "ADD" caso queira trocar o endereço de redirecionamento o endereço não será modificado. Redirect url é um endereço para o qual a aplicação redirecio após logar com o spotify.
+Se não clicar em "SAVE" as alterações não serão salvas e se preencher o campo, mas não clicar em "ADD" caso queira trocar o endereço de redirecionamento o endereço não será modificado. Redirect url é um endereço para o qual a aplicação redireciona após logar com o spotify.
 
 #### Execução
 Instalando as dependências e rodando a aplicação utilizando yarn:
