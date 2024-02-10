@@ -42,7 +42,6 @@ export function SongId () {
             const { acousticness, danceability, energy, instrumentalness, liveness, speechiness, valence } = res1.data
             setFeatures({acousticness, danceability, energy, instrumentalness, liveness, speechiness, valence})
             setTrack(res2.data)
-            console.log(res2.data)
         }))
     }, [])
 
