@@ -31,7 +31,6 @@ export function Songs() {
                 },
             })
         ]).then(axios.spread((res1, res2, res3) => {
-            console.log(res1, res2)
             setTracks([{type: 'last-month', songs: res1.data.items}, {type: 'last-six-months', songs: res2.data.items}, {type: 'all-time', songs: res3.data.items}])
         }))
 
