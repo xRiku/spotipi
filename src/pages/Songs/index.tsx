@@ -14,7 +14,6 @@ export function Songs() {
     useEffect(() => {
 
         let token = window.localStorage.getItem("token")
-        console.log(`TOKEN: ${token}`)
         axios.all([
             axios.get('https://api.spotify.com/v1/me/top/tracks?time_range=short_term', {
                 headers: {
